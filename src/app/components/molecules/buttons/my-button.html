@@ -1,17 +1,6 @@
-<!-- 
-  style logic example: "If I am inside an element with class .my-card, rotate me x degrees"
-  
-  Pure CSS Output: Tailwind compiles this into a standard CSS rule roughly looking like: .p-card .p-button-custom-class { rotate: 90deg; }. Browsers understand this perfectly.
-
-  No Encapsulation Issues: Since the class is added directly to the p-button (via styleClass), it sits in the global scope (or works through boundaries) more reliably than Angular's :host emulation.
-
-  Zero CSS Files: You keep the logic right where the component is defined.
--->
-
 <p-button [label]="label" [icon]="icon" [severity]="variant" [outlined]="isOutlined" (onClick)="handleClick($event)"
    styleClass="
-  
-     /* Generic Overrides */
+
      relative
      rounded-2xl
 
