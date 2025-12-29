@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
+import { DrawerModule } from 'primeng/drawer';
+import { MyButtonComponent } from '../molecules/buttons/my-button';
 
 @Component({
   selector: 'app-shell-regular',
-  imports: [ToolbarModule],
+  imports: [ToolbarModule, DrawerModule, MyButtonComponent],
   styleUrl: './shell-regular.css',
   template: `
     <div class="scheme-light bg-white text-slate-900 min-h-screen flex flex-col">
+      <p-drawer [(visible)]="sidebarVisible" header="Sidebar">
+          <p>Sidebar content goes here.</p>
+      </p-drawer>
       
       <p-toolbar styleClass="bg-brand-900 border-none rounded-none px-6 py-4">
         <ng-template pTemplate="start">
           <div class="flex items-center gap-2">
-            <i class="pi pi-box text-brand-50 text-2xl"></i>
+            <app-my-button icon="pi pi-bars" label="" (action)="sidebarVisible = true"></app-my-button>
             <span class="text-xl font-bold text-brand-50">MyApp</span>
           </div>
         </ng-template>
@@ -31,4 +36,5 @@ import { ToolbarModule } from 'primeng/toolbar';
   `,
 })
 export class ShellRegular {
+  sidebarVisible: boolean = false;
 }
