@@ -13,7 +13,7 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
           <p>Sidebar content goes here.</p>
       </p-drawer>
       
-      <p-toolbar styleClass="bg-brand-900 border-none rounded-none px-6 py-4">
+      <p-toolbar class="bg-brand-900 border-none rounded-none px-6 py-4">
         <ng-template pTemplate="start">
           <div class="flex items-center gap-2">
             <app-my-button icon="pi pi-bars" label="" (action)="sidebarVisible = true"></app-my-button>
