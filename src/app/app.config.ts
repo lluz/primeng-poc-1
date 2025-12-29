@@ -13,11 +13,15 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Aura,
         options: {
+
           // Critical for Tailwind v4: Insert 'primeng' layer correctly
           cssLayer: {
             name: 'primeng',
             order: 'theme, base, primeng, components, utilities'
-          }
+          },
+
+          // This tells PrimeNG: "Never look for dark mode"
+          darkModeSelector: false,
         }
       }
     })

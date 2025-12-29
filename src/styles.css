@@ -2,6 +2,14 @@
 @import "tailwindcss-primeui";
 @import "primeicons/primeicons.css";
 
+/* OVERRIDE the default dark variant.
+   By default, v4 might use media queries. 
+   This forces it to only trigger if the class ".dark" is present.
+   Since you will never add ".dark" to your <html> tag, dark mode is effectively dead.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 /* Tailwind Theme Configuration 
 */
 @theme {
@@ -12,6 +20,8 @@
 /* PrimeNG Token Configuration
 */
 :root {
+    color-scheme: light only;
+
     /* Changing the font family token 
     */
     --p-font-family: "Inter", sans-serif;
