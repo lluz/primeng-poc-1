@@ -14,6 +14,7 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
           <nav class="flex flex-col gap-2">
             <a routerLink="/" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Home Page</a>
             <a routerLink="/dashboard-a" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Dashboard A</a>
+            <a routerLink="/blank" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">blank</a>
           </nav>
       </p-drawer>
       
