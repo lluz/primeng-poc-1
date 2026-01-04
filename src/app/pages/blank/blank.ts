@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import { DrawerModule } from 'primeng/drawer';
 import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-blank',
-    standalone: true,
-    imports: [DrawerModule, ButtonModule],
-    styleUrl: './blank.css',
-    template: `
+	selector: 'app-blank',
+	standalone: true,
+	imports: [DrawerModule, ButtonModule, RouterModule],
+	styleUrl: './blank.css',
+	template: `
     <div class="p-8 font-sans">
         <p-drawer [(visible)]="visible" position="right" header="Right Drawer" styleClass="!w-80">
-            <p>This is the content of the right drawer.</p>
+            <nav class="flex flex-col gap-2">
+            <a routerLink="/" (click)="visible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Home Page</a>
+          </nav>
         </p-drawer>
 
         <div class="flex flex-col items-start gap-4">
@@ -21,5 +24,5 @@ import { ButtonModule } from 'primeng/button';
   `,
 })
 export class Blank {
-    visible: boolean = false;
+	visible: boolean = false;
 }
