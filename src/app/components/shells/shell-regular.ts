@@ -9,14 +9,7 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
   imports: [ToolbarModule, DrawerModule, MyButtonComponent, RouterModule],
   styleUrl: './shell-regular.css',
   template: `
-    <div class="scheme-light bg-white text-slate-900 h-screen flex flex-col">
-      <p-drawer [(visible)]="sidebarVisible" header="Sidebar">
-          <nav class="flex flex-col gap-2">
-            <a routerLink="/" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Home Page</a>
-            <a routerLink="/dashboard-a" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Dashboard A</a>
-            <a routerLink="/blank" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">blank</a>
-          </nav>
-      </p-drawer>
+    <div class="relative z-0 scheme-light bg-white text-slate-900 h-screen flex flex-col">
       
       <p-toolbar class="bg-brand-900 border-b border-surface-300 rounded-none px-6 py-4">
         <ng-template pTemplate="start">
@@ -36,6 +29,26 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
           © 2025 Enterprise Dashboard. Powered by Angular & PrimeNG.
         </p>
       </footer>
+
+      <div 
+        class="absolute z-10 inset-0 bg-black/40 transition-opacity duration-300"
+        [class.opacity-0]="!sidebarVisible"
+        [class.opacity-100]="sidebarVisible"
+        [class.pointer-events-none]="!sidebarVisible"
+        (click)="sidebarVisible = false"
+      ></div>
+
+      <p-drawer 
+        [(visible)]="sidebarVisible" 
+        header="Sidebar"
+        [modal]="false"
+      >
+          <nav class="flex flex-col gap-2">
+            <a routerLink="/" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Home Page</a>
+            <a routerLink="/dashboard-a" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">Dashboard A</a>
+            <a routerLink="/blank" (click)="sidebarVisible = false" class="p-3 hover:bg-surface-100 rounded text-surface-700 font-medium no-underline block">blank</a>
+          </nav>
+      </p-drawer>
       
     </div>
   `,
