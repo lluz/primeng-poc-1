@@ -13,4 +13,5 @@ import { CardModule } from 'primeng/card';
 })
 export class MyCardComponent {
   @Input() header: string = '';
+  @Input() titleClass: string = 'text-blue-500';
 }

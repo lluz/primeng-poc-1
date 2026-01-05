@@ -1,3 +1,9 @@
-<p-card [header]="header" class="bg-white text-blue-500 shadow-xl rounded-20">
+<p-card class="bg-white shadow-xl rounded-20">
+  <ng-template pTemplate="title">
+    <span [class]="titleClass">{{ header }}</span>
+  </ng-template>
   <ng-content></ng-content>
+  <ng-template pTemplate="footer">
+    <ng-content select="my-card-footer"></ng-content>
+  </ng-template>
 </p-card>
