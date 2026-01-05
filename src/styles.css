@@ -27,6 +27,44 @@
     --p-font-family: "Inter", sans-serif;
 }
 
+/* View Transitions API */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+             400ms cubic-bezier(0.4, 0, 0.2, 1) both slide-up;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); }
+  to { transform: translateY(0); }
+}
+
+/* Ensure the sidebar overlay doesn't flicker or get stuck in the snapshot */
+.p-drawer-mask, 
+.p-drawer,
+div[class*="bg-black/40"] {
+  view-transition-name: none !important;
+}
+
 
 
 /* Layer Configuration 
