@@ -8,7 +8,7 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
   selector: 'app-shell-regular',
   imports: [ToolbarModule, DrawerModule, MyButtonComponent, RouterModule],
   host: {
-    class: 'relative z-0 scheme-light bg-white text-slate-900 h-screen flex flex-col'
+    class: 'shell-regular relative z-0 scheme-light bg-white text-slate-900 h-screen flex flex-col'
   },
   styleUrl: './shell-regular.css',
   template: `
