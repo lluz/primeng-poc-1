@@ -16,7 +16,7 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
       <ng-template pTemplate="start">
         <div class="flex items-center gap-2">
           <app-my-button icon="pi pi-bars" label="" (action)="sidebarVisible = true"></app-my-button>
-          <span class="text-xl font-bold text-brand-50">MyApp</span>
+          <span class="text-xl font-bold text-surface-400">MyApp</span>
         </div>
       </ng-template>
     </p-toolbar>
