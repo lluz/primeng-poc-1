@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 
@@ -11,5 +11,6 @@ import { CardModule } from 'primeng/card';
   },
   templateUrl: './my-card.html',
 })
-export class MyCardnComponent {
+export class MyCardComponent {
+  @Input() header: string = '';
 }
