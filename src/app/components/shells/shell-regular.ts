@@ -20,7 +20,7 @@ import { MyButtonComponent } from '../molecules/buttons/my-button';
         </ng-template>
       </p-toolbar>
 
-      <main class="flex-1 w-full overflow-auto">
+      <main class="flex-1 w-full overflow-auto bg-surface-100">
          <ng-content></ng-content>
       </main>
 
