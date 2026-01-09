@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { DialogModule } from 'primeng/dialog';
+import { MyButtonComponent } from '../../components/molecules/buttons/my-button';
+import { RouterModule } from '@angular/router';
 
 import { ShellRegular } from '../../components/shells/shell-regular';
 
 @Component({
   selector: 'app-home',
-  imports: [ShellRegular],
+  imports: [ShellRegular, DialogModule, MyButtonComponent, RouterModule],
   styleUrl: './home.css',
   template: `
     <app-shell-regular>
@@ -12,6 +15,42 @@ import { ShellRegular } from '../../components/shells/shell-regular';
       <div class="p-6 space-y-4">
         <h1 class="text-3xl font-bold mb-4">Home Page</h1>
         <p>Text</p>
+        
+        <app-my-button label="Open Dialog" (action)="displayDialog = true"></app-my-button>
+
+        <p-dialog 
+          header="Info Dialog" 
+          [(visible)]="displayDialog" 
+          [modal]="true" 
+          [style]="{ width: '50rem' }" 
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+          [maximizable]="true"
+        >
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <p class="text-surface-500 dark:text-surface-400 block mb-8">This is a dummy text inside a dialog window. You can navigate from here.</p>
+            <ng-template #footer>
+                <app-my-button label="Go to Dashboard A" routerLink="/dashboard-a" (click)="displayDialog = false"></app-my-button>
+            </ng-template>
+        </p-dialog>
+
         <p class="leading-relaxed text-surface-600">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
@@ -63,4 +102,5 @@ import { ShellRegular } from '../../components/shells/shell-regular';
   `,
 })
 export class Home {
+  displayDialog: boolean = false;
 }
